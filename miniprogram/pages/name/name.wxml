@@ -1,0 +1,4 @@
+<!--miniprogram/pages/name/name.wxml-->
+<view class="wrap" >
+  <canvas id="canvas_test" type="2d" bindtouchmove="handleTouchMove"  bind:tap="handleClick"></canvas>
+</view>

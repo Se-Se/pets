@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room",
+    "pages/main/main",
+    "pages/chat/chat",
+    "pages/home/home",
+    "pages/login/login",
+    "pages/name/name"
+  ],
+  "entryPagePath": "pages/name/name",
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  },
+  "tabBar": {
+    "color": "#FFFAFA",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "backgroundColor": "#FFB6C1",
+    "list": [
+      {
+        "pagePath": "pages/im/im",
+        "text": "聊天",
+        "iconPath": "style/imgs/png/sofa.png",
+        "selectedIconPath": "style/imgs/png/sofa.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "想做的事",
+        "iconPath": "style/imgs/png/write.png",
+        "selectedIconPath": "style/imgs/png/write.png"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "text": "登录",
+        "iconPath": "style/imgs/png/diary.png",
+        "selectedIconPath": "style/imgs/png/diary.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "照片",
+        "iconPath": "style/imgs/png/photo.png",
+        "selectedIconPath": "style/imgs/png/photo.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "iconPath": "style/imgs/png/home.png",
+        "selectedIconPath": "style/imgs/png/home.png"
+      }
+    ]
+  }
+}

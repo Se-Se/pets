@@ -1,0 +1,14 @@
+/* miniprogram/pages/name/name.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.wrap{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(26, 26, 27);
+}
+#canvas_test{
+  width: 100%;
+  height: 100%;
+}

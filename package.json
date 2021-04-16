@@ -1,0 +1,20 @@
+{
+  "name": "pets_friends",
+  "version": "1.0.0",
+  "description": "这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：",
+  "main": "watcher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node watcher.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.weixin.qq.com/wx_wx62386b66df7eb650/pets.git"
+  },
+  "author": "ablert",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar": "^3.5.1",
+    "node-sass": "^5.0.0"
+  }
+}

@@ -1,0 +1,18 @@
+/* components/swiper/swiper.wxss */
+.swiper-sec {
+  width: 100%;
+  height: 100%;
+}
+.swiper-item{
+position: relative;
+width: 100%;
+height: 300rpx;
+}
+.swiper-item image{
+  /* width: auto!important;
+  height: 300rpx !important; */
+  margin:0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}

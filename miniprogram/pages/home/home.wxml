@@ -1,0 +1,15 @@
+<!--miniprogram/pages/home/home.wxml-->
+<view class="wrap">
+  <!-- <view class="userinfo">
+      <view bindtap="getUserProfile"> 获取头像昵称333 </view>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view> -->
+
+  <cover-view class="btn-area" scroll-top="0">
+    <button class="bgm" bind:tap="goLogin">login</button>
+  </cover-view>
+  <view class="heart">
+    <canvas id="canvas_heart"  type="2d" ></canvas>
+  </view>
+ 
+</view>

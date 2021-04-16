@@ -1,0 +1,6 @@
+/* miniprogram/pages/main/main.wxss */
+@import "../../style/assets/wxss/main.wxss";
+page{
+    width: 100%;
+    height: 100%;
+}

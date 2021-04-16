@@ -1,0 +1,14 @@
+/* miniprogram/pages/chat/chat.wxss */
+
+@import '../../style/icon/fonts/iconfont.wxss';
+.container {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* padding-top: 80rpx; */
+  /* padding-bottom: 30rpx; */
+  background-color: rgb(253, 222, 249);
+}

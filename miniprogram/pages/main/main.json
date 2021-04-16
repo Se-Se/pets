@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "swiper-component":"../../components/swiper/swiper",
+    "camera-component":"../../components/camera/camera"
+  },
+  "navigationBarTitleText": "宠物宝贝",
+  "navigationBarBackgroundColor": "#a30a0a",
+  "navigationBarTextStyle": "white"
+}

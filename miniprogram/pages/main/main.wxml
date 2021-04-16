@@ -1,0 +1,29 @@
+<!-- miniprogram/pages/main/main.wxml -->
+<view class="wrap">
+  <view class="content">
+    <view class="header">
+      <view class="pets-info">
+        <view class="pet-img">
+          <image bindtap="changePetImg" class="pet" src="{{petImg}}" mode="cover"></image>
+        </view>
+        <view class="name">{{petName}}</view>
+      </view>
+      <view class="user">
+        <view class="user-img">
+          <block wx:if="{{canIUseOpenData}}" class="userinfo">
+            <view class="userinfo-img" bindtap="bindViewTap">
+              <open-data type="userAvatarUrl"></open-data>
+            </view>
+          </block>
+        </view>
+        <view class="name">
+          铲屎官：
+          <open-data type="userNickName"></open-data>
+        </view>
+      </view>
+    </view>
+    <view class="swiper-content">
+      <swiper-component></swiper-component>
+    </view>
+  </view>
+</view>

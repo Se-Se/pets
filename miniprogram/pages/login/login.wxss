@@ -1,0 +1,24 @@
+/* miniprogram/pages/login/login.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.wrap{
+  width: 100%;
+  height: 100%;
+}
+.login {
+  width:60%;
+  margin:200rpx auto;
+  /* background-color: bisque; */
+}
+.login .login-input{
+  height: 100rpx;
+  margin-bottom: 20rpx;
+  padding: 10rpx 30rpx;
+  box-sizing: border-box;
+  box-shadow: 0rpx 10rpx 30rpx rgba(0, 0, 0, 0.15);
+}
+.login .login-btn{
+  margin-top: 50rpx;
+}

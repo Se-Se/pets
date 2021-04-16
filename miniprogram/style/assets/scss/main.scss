@@ -1,0 +1,92 @@
+@import "base.scss";
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    background-color: $base-color-2;
+
+    .content {
+        width: 100%;
+        height: 100%;
+        background: $background-gradient-1;
+
+        .camera-content {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+
+            .camera {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .header {
+            height: 240rpx;
+            padding: 40rpx;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: bisque;
+            position: relative;
+            font-size: $base-font;
+
+            .pets-info {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                .pet-img {
+                    width: 150rpx;
+                    height: 150rpx;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    .pet {
+                        width: 150rpx;
+                        height: 150rpx;
+                    }
+                }
+
+                .name {
+                    min-width: 150rpx;
+                    text-align: center;
+                    line-height: 50rpx;
+                    height: 50rpx;
+                    color: rgb(161, 41, 4);
+                }
+            }
+
+            .user {
+                position: absolute;
+                bottom: 20rpx;
+                right: 10rpx;
+                font-size: $normal-font;
+
+                .user-img {
+                    width: 50rpx;
+                    height: 50rpx;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: auto;
+
+                    .userinfo-img {
+                        width: 50rpx;
+                        height: 50rpx;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper-content {
+        height: 300rpx;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 50rpx;
+    }
+}
