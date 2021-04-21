@@ -1,0 +1,14 @@
+<!-- miniprogram/pages/register/register.wxml -->
+<view class="wrap">
+  <view class="input-sec">
+    <input placeholder-class="phcolor" class=" name" auto-focus placeholder="铲屎官名" data-type="reg_name" bindinput="handleInput" />
+    <input placeholder-class="phcolor" class=" name" auto-focus placeholder="神兽名" data-type="reg_pet" bindinput="handleInput" />
+    <input password="true" maxlength="8" placeholder-class="phcolor" class="password" data-type="reg_pw" bindinput="handleInput" auto-focus placeholder="密码最大长度8" />
+  </view>
+  <view class="canvas-sec">
+    <cover-view class="btn-area" scroll-top="0">
+      <button class="btn" bind:tap="handleRegister">注册</button>
+    </cover-view>
+    <heart-canvas ></heart-canvas>
+  </view>
+</view>

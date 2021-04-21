@@ -8,10 +8,10 @@
         </view>
         <view class="name">{{petName}}</view>
       </view>
-      <view class="user">
+      <view class="user" bindtap="bindViewTap">
         <view class="user-img">
           <block wx:if="{{canIUseOpenData}}" class="userinfo">
-            <view class="userinfo-img" bindtap="bindViewTap">
+            <view class="userinfo-img" >
               <open-data type="userAvatarUrl"></open-data>
             </view>
           </block>

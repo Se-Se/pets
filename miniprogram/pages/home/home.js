@@ -1,17 +1,19 @@
 // miniprogram/pages/login/login.js
-import {HEART} from '../../utils/heart';
+import { HEART } from '../../utils/heart';
+import { isLogin } from '../../utils/login';
 Page({
 
   /**
    * 页面的初始数据
    */
-   data: {
+  data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: true,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
+    isLogin: true,
   },
   // 事件处理函数
   bindViewTap() {
@@ -36,9 +38,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-test_canvas(taget){
-  const query = wx.createSelectorQuery();
-  query.select('#canvas_heart').fields({ node: true, size: true }).exec((res) => {
+  test_canvas(taget) {
+    const query = wx.createSelectorQuery();
+    query.select('#canvas_heart').fields({ node: true, size: true }).exec((res) => {
       console.log(res)
       const canvas = res[0].node;
       taget.canvas = canvas;
@@ -62,29 +64,36 @@ test_canvas(taget){
       taget.render();
       taget.offInit();
     })
-},
-   onLoad:function() {
-      wx.getUserProfile({
-        desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-        success: (res) => {
-          console.log(res)
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      });
-      HEART.canvasFun();
-      // this.test_canvas(HEART);
   },
-  goLogin(){
-    console.log(111)
+  onLoad: function () {
+    this.init();
+  },
+
+  init() {
+    wx.getUserProfile({
+      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    });
+    HEART.canvasFun();
+    // this.test_canvas(HEART);
+
+    isLogin().then(res => {
+      this.setData({
+        isLogin: !res
+      });
+    });
+  },
+  goLogin() {
     wx.switchTab({
       url: '/pages/login/login'
     })
   },
-
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -5,7 +5,7 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view> -->
 
-  <cover-view class="btn-area" scroll-top="0">
+  <cover-view class="btn-area" scroll-top="0" wx:if="{{isLogin}}">
     <button class="bgm" bind:tap="goLogin">login</button>
   </cover-view>
   <view class="heart">

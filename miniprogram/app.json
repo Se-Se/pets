@@ -17,9 +17,16 @@
     "pages/chat/chat",
     "pages/home/home",
     "pages/login/login",
-    "pages/name/name"
+    "pages/name/name",
+    "pages/register/register",
+    "pages/map/map"
   ],
-  "entryPagePath": "pages/name/name",
+  "entryPagePath": "pages/map/map",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
@@ -40,34 +47,34 @@
     "backgroundColor": "#FFB6C1",
     "list": [
       {
-        "pagePath": "pages/im/im",
-        "text": "聊天",
-        "iconPath": "style/imgs/png/sofa.png",
-        "selectedIconPath": "style/imgs/png/sofa.png"
-      },
-      {
-        "pagePath": "pages/chat/chat",
-        "text": "想做的事",
-        "iconPath": "style/imgs/png/write.png",
-        "selectedIconPath": "style/imgs/png/write.png"
-      },
-      {
-        "pagePath": "pages/login/login",
-        "text": "登录",
-        "iconPath": "style/imgs/png/diary.png",
-        "selectedIconPath": "style/imgs/png/diary.png"
-      },
-      {
-        "pagePath": "pages/main/main",
-        "text": "照片",
-        "iconPath": "style/imgs/png/photo.png",
-        "selectedIconPath": "style/imgs/png/photo.png"
-      },
-      {
         "pagePath": "pages/home/home",
         "text": "主页",
         "iconPath": "style/imgs/png/home.png",
         "selectedIconPath": "style/imgs/png/home.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "神兽",
+        "iconPath": "style/imgs/png/CatFootprint_brown.png",
+        "selectedIconPath": "style/imgs/png/CatFootprint.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "聊天",
+        "iconPath": "style/imgs/png/calling.png",
+        "selectedIconPath": "style/imgs/png/calling.png"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "text": "定位",
+        "iconPath": "style/imgs/png/write.png",
+        "selectedIconPath": "style/imgs/png/write.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "日记",
+        "iconPath": "style/imgs/png/diary.png",
+        "selectedIconPath": "style/imgs/png/diary.png"
       }
     ]
   }

@@ -1,5 +1,7 @@
 // miniprogram/pages/main/main.js
-import { cloudUpSingleFile, getDb, updateDb } from '../../utils/upFile.js';
+import { cloudUpSingleFile, getDb, updateDb } from '../../utils/connectDb.js';
+import { getStorage } from '../../utils/storage';
+import { isLogin } from '../../utils/login';
 Page({
 
   /**
@@ -7,9 +9,9 @@ Page({
    */
   data: {
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl'),
-    petImg: '',
+    petImg: '../../images/dog_cat.jpg',
     showCamera: false,
-    petName:''
+    petName: ''
   },
   // 初始话宠物头像
   initPetInfo() {
@@ -19,29 +21,33 @@ Page({
         let info = JSON.parse(res.data);
         this.setData({
           petImg: info.head_img,
-          petName:info.pet_name
+          petName: info.pet_name
         })
       },
-      fail:()=>{
-        getDb('pets',{ owner: 'zd', password: '123' }).then(res=>{
-           wx.setStorage({
-            key: "pet_info",
-            data:JSON.stringify(res[0]),
-            success:()=>{
-              this.setData({
-                petImg: res[0].head_img,
-                petName: res[0].pet_name,
-              })
-            }
-           })
-        })
+      fail: () => {
+        getStorage('user').then(res => {
+          console.log(res)
+          let info = JSON.parse(res);
+          getDb('users', info).then(res => {
+            wx.setStorage({
+              key: "pet_info",
+              data: JSON.stringify(res[0]),
+              success: () => {
+                this.setData({
+                  petImg: res[0].head_img,
+                  petName: res[0].pet_name,
+                });
+              }
+            });
+          });
+        });
       }
     })
   },
   // 变更宠物头像
   changePetImg() {
     cloudUpSingleFile('pet_header_img').then(res => {
-      updateDb('pets', { owner: 'zd', password: '123' }, 'head_img', res[0].fileID).then(() => {
+      updateDb('users', { owner: 'zd', password: '123' }, 'head_img', res[0].fileID).then(() => {
         wx.setStorage({
           key: "pet_head_img",
           data: res[0].fileID,
@@ -69,7 +75,32 @@ Page({
   },
 
   init() {
-    this.initPetInfo()
+    isLogin().then(res => {
+      if (res) {
+        this.initPetInfo()
+      } else {
+        wx.showToast({
+          title: '请先登录',
+          icon: 'error',
+          duration: 2000,
+          complete: () => {
+            setTimeout(() => {
+              wx.switchTab({
+                url: '/pages/home/home'
+              });
+            }, 1000)
+
+          }
+        })
+
+      }
+    })
+
+  },
+  bindViewTap() {
+    wx.navigateTo({
+      url: '.././login/login'
+    })
   },
 
   /**

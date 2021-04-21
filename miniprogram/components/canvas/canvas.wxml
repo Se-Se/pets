@@ -1,0 +1,6 @@
+<!-- components/canvas/canvas.wxml -->
+<view class="container">
+    <view class="canvas-content">
+        <canvas id="the_canvas" class="canvas" type="2d"></canvas>
+    </view>
+</view>
